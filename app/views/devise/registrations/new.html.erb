@@ -1,5 +1,5 @@
 <div class = "panel panel-default">
-	<div class = "panel-heading"> <h2>Sign up</h2> </div>
+	<div class = "panel-heading"> <h2>Зарегистрироваться</h2> </div>
 	<div class = "panel-body">
 		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 		  <%= devise_error_messages! %>
@@ -10,17 +10,17 @@
 			</div>
 
 		  <div class="form-group">
-		  	<%= f.label :password %>
+		  	<%= f.label :password, "Пароль" %>
 		  	<%= f.password_field :password, class: "form-control" %>
 		  </div>
 
 		  <div class="form-group">
-		  	<%= f.label :password_confirmation %>
+		  	<%= f.label :password_confirmation, "Подтвердите пароль" %>
 		  	<%= f.password_field :password_confirmation, class: "form-control" %>
 		  </div>
 
 		  <div class ="form-group">
-		  	<%= f.submit "Sign up", class: "btn btn-primary" %>
+		  	<%= f.submit "Зарегистрироваться", class: "btn btn-primary" %>
 		  </div>
 		<% end %>
 	</div>
