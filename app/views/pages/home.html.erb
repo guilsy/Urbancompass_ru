@@ -1,13 +1,13 @@
 <div class="jumbotron">
-	<h1>Урбан - удобный <b>сервис по поиску квартиры</b> </h1> </br> 
+	<h1>Урбан - удобный <b>сервис по поиску квартиры</b> </h1>
 	<h3>Мы совмещаем <b>удобство</b> агентсва и <b>прозрачность и низкие цены</b> онлайн базы</h3>
 
 	<% if user_signed_in? %>
 		# do smth
 		<% else %>
 	<p>	
-			<%= link_to "Log In", new_user_session_path, class: "btn btn-lg" %>
-			<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %> 
+			<%= link_to "Зарегистрироваться", new_user_registration_path, class: "btn btn-primary btn-lg" %> 
+			<%= link_to "Войти", new_user_session_path, class: "btn btn-lg" %>
 	</p>
 	<% end %>
 
