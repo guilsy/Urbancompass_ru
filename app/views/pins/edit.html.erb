@@ -1,6 +1,13 @@
-<h1>Editing pin</h1>
+<div class = "panel panel-default">
+	<div class = "panel panel-heading">
+		<h1>Редактирование Пина</h1>
+	</div>
+	<div class = "panel panel-body">
+		<%= render 'form' %>
+	</div>
+	<div class = "panel panel-footer">
+		<%= link_to 'Показать', @pin %> |
+		<%= link_to 'Назад', pins_path %>
+	</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @pin %> |
-<%= link_to 'Back', pins_path %>
+</div>

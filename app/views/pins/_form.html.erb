@@ -1,21 +1,21 @@
-<%= form_for(@pin) do |f| %>
-  <% if @pin.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
 
-      <ul>
-      <% @pin.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <%= form_for(@pin) do |f| %>
+    <% if @pin.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@pin.errors.count, "error") %> непозволили сохранить данный Пин</h2>
+
+        <ul>
+        <% @pin.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :description, "Описание" %><br>
+      <%= f.text_field :description, class: "form-control" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Создать Пин", class: "btn btn-primary" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
