@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131221075324) do
+ActiveRecord::Schema.define(version: 20131226080707) do
 
   create_table "pins", force: true do |t|
     t.string   "description"
@@ -22,8 +22,13 @@ ActiveRecord::Schema.define(version: 20131221075324) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "address"
+    t.integer  "bedroom_number"
+    t.integer  "price"
   end
 
+  add_index "pins", ["address"], name: "index_pins_on_address"
+  add_index "pins", ["bedroom_number"], name: "index_pins_on_bedroom_number"
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"
 
   create_table "users", force: true do |t|
