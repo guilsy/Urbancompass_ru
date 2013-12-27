@@ -14,12 +14,27 @@
 
     <div class="form-group">
       <%= f.label :image, "Изображение" %><br>
-      <%= f.file_field :image, class: "form-control" %>
+      <%= f.file_field :image, :multiple => "multiple", class: "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= f.label :description, "Описание" %><br>
+      <%= f.label :description, "Название" %><br>
       <%= f.text_field :description, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :price, "Цена" %><br>
+      <%= f.text_field :price, class: "form-control" %>
+    </div>
+
+     <div class="form-group">
+      <%= f.label :bedroom_number, "Количество комнат" %><br>
+      <%= f.text_field :bedroom_number, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :address, "Адрес" %><br>
+      <%= f.text_field :address, class: "form-control" %>
     </div>
 
     <div class="actions">

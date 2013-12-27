@@ -1,21 +1,32 @@
 <div class = "list-group">
   <% @pins.each do |pin| %>
     <%= link_to pin, class: "list-group-item" do %>
-      <%= image_tag pin.image.url(:medium) %>
-      <%= pin.description %>
-      <%= pin.address %>
-      <%= pin.bedroom_number %>
-      <%= pin.price %>
+      <div class = "row">
+        <div class = "col-md-4"><%= image_tag pin.image.url(:medium) %> 
+        </div>
+        <div class = "col-md-8">
+          <h2><%= pin.address %></h2>
+          <h6>Добавлено <%= pin.created_at.day %>-<%= pin.created_at.month %>-<%= pin.created_at.year%> </h6>
+          <table class = "table table-bordered" width = "100%">
+            <tr>
+              <td>
+                <h5 align="center">Количество комнат<br></h5>
+                <h2 align="center"><%= pin.bedroom_number %></h2>
+              </td>  
+              <td>
+                <h5 align="center"> Цена<br></h5>
+                <h2 align="center"><%= pin.price %></h2>
+                <h5 align="center"><br>рублей в месяц</h5>
+              </td>  
+            </tr>
+          </table>  
+        </div>  <!-- info section of the apartments collapsed !--> 
+      </div>  <!-- one apartment raw collapsed !--> 
     <% end %>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
         <% if pin.user == current_user %>
         <td><%= link_to 'Редактировать', edit_pin_path(pin), class: "btn btn-secondary" %></td>
         <td><%= link_to 'Удалить', pin, class: "btn btn-secondary", method: :delete, data: { confirm: 'Вы уверены?' } %></td>
         <% end %>
-      </tr>
   <% end %>
 </div>
 
