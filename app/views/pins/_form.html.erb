@@ -43,7 +43,7 @@
     
   <% end %>
 
-  <%= fields_for @pin.pic.build, html: { multipart: true } do |u| %>
+  <%= fields_for @pic, html: { multipart: true } do |u| %>
       <%= u.label :image, t('.Загрузите фотографии квартиры') %>
       <%= u.file_field :image, multiple: true%>
     <% end %>

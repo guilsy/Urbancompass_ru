@@ -14,7 +14,8 @@ class PicsController < ApplicationController
 
   # GET /pics/new
   def new
-    @pic = Pic.new
+    @pin = Pin.find(params[:id])
+    @pic = @pin.pics.build
   end
 
   # GET /pics/1/edit
@@ -25,7 +26,7 @@ class PicsController < ApplicationController
   # POST /pics.json
   def create
     @pin = Pin.find(params[:id])
-    @pic = @pin.pics.create(params[:comment].permit(:commenter, :body))
+    @pic = @pin.pics.build(pic_params)
     redirect_to @pin_path   
   end
 
