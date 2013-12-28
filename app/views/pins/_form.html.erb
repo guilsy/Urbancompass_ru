@@ -12,10 +12,10 @@
       </div>
     <% end %>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <%= f.label :image, "Изображение" %><br>
       <%= f.file_field :image, :multiple => "multiple", class: "form-control" %>
-    </div>
+    </div> !-->
 
     <div class="form-group">
       <%= f.label :description, "Название" %><br>
@@ -42,3 +42,11 @@
     </div>
     
   <% end %>
+
+  <%= fields_for @pin.pic.build, html: { multipart: true } do |u| %>
+      <%= u.label :image, t('.Загрузите фотографии квартиры') %>
+      <%= u.file_field :image, multiple: true%>
+    <% end %>
+
+<% # jquery upload template # %>
+<script id="template-upload" type="text/x-tmpl"><div class="upload">{%=o.name%}<div class="progress"><div class="bar" style="width: 0%"></div></div></div></script>

@@ -1,6 +1,7 @@
 Pinteresting::Application.routes.draw do
-  devise_for :photos
-  resources :pins
+  resources :pins do
+    resources :pics
+  end  
 
   devise_for :users
  root "pages#home"
