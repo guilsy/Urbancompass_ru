@@ -61,5 +61,4 @@ class PinsController < ApplicationController
     def pic_params
       params.require(:pic).permit(:pin_id, :image)
     end
-
 end
