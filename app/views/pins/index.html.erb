@@ -3,9 +3,7 @@
     <%= link_to pin, class: "list-group-item" do %>
       <div class = "row">
         <div class = "col-md-3">
-          <% pin.pics.each do |x| %>
-            <%= image_tag x.image.url :thumb %>
-          <% end %>
+          <%= image_tag pin.pics[0].image.url :thumb %>
         </div>
         <div class = "col-md-9">
           <h2><%= pin.address %></h2>
