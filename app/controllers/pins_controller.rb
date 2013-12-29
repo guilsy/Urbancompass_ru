@@ -15,6 +15,7 @@ class PinsController < ApplicationController
   end
 
   def edit
+    @pic = @pin.pics.build
   end
 
   def create

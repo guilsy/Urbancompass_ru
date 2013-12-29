@@ -2,7 +2,7 @@
   <% @pins.each do |pin| %>
     <%= link_to pin, class: "list-group-item" do %>
       <div class = "row">
-        <div class = "col-md-4"><%= image_tag pin.pics.where(pin_id: params[:id], id: params[1]) %>
+        <div class = "col-md-4"><%= image_tag pin.pics.where(id: params[1]) %>
         </div>
         <div class = "col-md-8">
           <h2><%= pin.address %></h2>

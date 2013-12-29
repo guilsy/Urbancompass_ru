@@ -44,7 +44,7 @@
   <% end %>
 
   <%= fields_for @pic, html: { multipart: true } do |u| %>
-      <%= u.label :image, t('.Загрузите фотографии квартиры') %>
+      <%= u.label :image, t('.Добавьте фотографии квартиры') %>
       <%= u.file_field :image, multiple: true%>
     <% end %>
 
