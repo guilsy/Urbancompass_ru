@@ -4,7 +4,8 @@ class PicsController < ApplicationController
   # GET /pics
   # GET /pics.json
   def index
-    @pics = Pic.all
+    @pin = Pin.find(params[:pin_id])
+    @pics = @pin.pics.all
   end
 
   # GET /pics/1
@@ -14,8 +15,9 @@ class PicsController < ApplicationController
 
   # GET /pics/new
   def new
-    @pin = Pin.find(params[:id])
+    @pin = Pin.find(params[:pin_id])
     @pic = @pin.pics.build
+    redirect_to new_pin_pics_path
   end
 
   # GET /pics/1/edit
@@ -25,9 +27,9 @@ class PicsController < ApplicationController
   # POST /pics
   # POST /pics.json
   def create
-    @pin = Pin.find(params[:id])
-    @pic = @pin.pics.build(pin_params)
-    redirect_to @pin_path   
+    @pin = Pin.find(params[:pin_id])
+    @pic = @pin.pics.build(pic_params)
+    redirect_to @pin_pics_path   
   end
 
   # PATCH/PUT /pics/1

@@ -37,16 +37,13 @@
       <%= f.text_field :address, class: "form-control" %>
     </div>
 
+    <%= fields_for @pic, html: { multipart: true } do |u| %>
+      <%= u.label :image, "Добавьте фотографии квартиры" %>
+      <%= u.file_field :image, class: "form-control" %>
+  <% end %>
+
     <div class="actions">
       <%= f.submit "Создать Пин", class: "btn btn-primary" %>
     </div>
     
   <% end %>
-
-  <%= fields_for @pic, html: { multipart: true } do |u| %>
-      <%= u.label :image, t('.Добавьте фотографии квартиры') %>
-      <%= u.file_field :image, multiple: true%>
-    <% end %>
-
-<% # jquery upload template # %>
-<script id="template-upload" type="text/x-tmpl"><div class="upload">{%=o.name%}<div class="progress"><div class="bar" style="width: 0%"></div></div></div></script>
