@@ -2,9 +2,12 @@
   <% @pins.each do |pin| %>
     <%= link_to pin, class: "list-group-item" do %>
       <div class = "row">
-        <div class = "col-md-4"><%= image_tag pin.pics.where(id: params[1]) %>
+        <div class = "col-md-3">
+          <% pin.pics.each do |x| %>
+            <%= image_tag x.image.url :thumb %>
+          <% end %>
         </div>
-        <div class = "col-md-8">
+        <div class = "col-md-9">
           <h2><%= pin.address %></h2>
           <h6>Добавлено <%= pin.created_at.day %>-<%= pin.created_at.month %>-<%= pin.created_at.year%> </h6>
           <table class = "table table-bordered" width = "100%">
