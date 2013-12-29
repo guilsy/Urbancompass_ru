@@ -1,5 +1,5 @@
 <% @pin.pics.each do |x| %>
-	<%= image_tag @pin.pics.where(id: x) %>
+	<%= image_tag x.image.url :medium %>
 <% end %>
 
 <p id="notice"><%= notice %></p>

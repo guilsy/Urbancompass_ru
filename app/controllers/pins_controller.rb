@@ -20,7 +20,7 @@ class PinsController < ApplicationController
 
   def create
     @pin = current_user.pins.build(pin_params)
-    @pic = @pin.pics.build
+    @pic = @pin.pics.build(pic_params)
       if @pin.save
         redirect_to @pin, notice: 'Пин был успешно создан.'
       else
@@ -29,6 +29,7 @@ class PinsController < ApplicationController
   end  
 
   def update
+    @pic = @pin.pics.build(pic_params)
       if @pin.update(pin_params)
         redirect_to @pin, notice: 'Пин был успешно обновлен.'
       else
@@ -56,4 +57,9 @@ class PinsController < ApplicationController
     def pin_params
       params.require(:pin).permit(:description, :image, :address, :bedroom_number, :price)
     end
+
+    def pic_params
+      params.require(:pic).permit(:pin_id, :image)
+    end
+
 end
