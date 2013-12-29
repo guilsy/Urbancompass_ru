@@ -11,6 +11,7 @@ class PinsController < ApplicationController
 
   def new
     @pin = current_user.pins.build
+    @pic = @pin.pics.build
   end
 
   def edit

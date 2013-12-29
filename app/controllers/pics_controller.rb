@@ -26,7 +26,7 @@ class PicsController < ApplicationController
   # POST /pics.json
   def create
     @pin = Pin.find(params[:id])
-    @pic = @pin.pics.build(pic_params)
+    @pic = @pin.pics.build(pin_params)
     redirect_to @pin_path   
   end
 
@@ -62,6 +62,6 @@ class PicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pic_params
-      params[:pic]
+      params.require(:pic).permit(:pin_id)
     end
 end
