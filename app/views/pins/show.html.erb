@@ -1,8 +1,7 @@
 <% @pin.pics.each do |x| %>
 	<%= link_to image_tag(x.image.url(:medium)), 
-									x.image.url,
-									class: 'fancybox', 
-										rel: 'group' %>
+									x.image.url(:large),
+									:class => "fancybox" %>
 <% end %>
 
 <p id="notice"><%= notice %></p>
