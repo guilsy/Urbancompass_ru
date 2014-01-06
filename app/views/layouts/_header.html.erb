@@ -16,6 +16,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Домой", root_path %></li>
           <li><%= link_to "О нас", about_path %></li>
+          <li><%= link_to "Квартиры", pins_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to "Настройки профиля", edit_user_registration_path %></li>
             <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>

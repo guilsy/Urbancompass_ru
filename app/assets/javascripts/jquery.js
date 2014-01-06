@@ -1,3 +1,5 @@
-jQuery(function() {
-  $("a.fancybox").fancybox();
+$(document).ready(function() {
+	jQuery(function() {
+  	$("a.fancybox").fancybox();
+	});
 });

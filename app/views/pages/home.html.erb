@@ -1,14 +1,18 @@
-<div class="jumbotron">
-	<h1>Урбан - удобный <b>сервис по поиску квартиры</b> </h1>
-	<h3>Мы совмещаем <b>удобство</b> агентсва и <b>прозрачность и низкие цены</b> онлайн базы</h3>
-
-	<% if user_signed_in? %>
-		# do smth
-		<% else %>
-	<p>	
-			<%= link_to "Зарегистрироваться", new_user_registration_path, class: "btn btn-primary btn-lg" %> 
-			<%= link_to "Войти", new_user_session_path, class: "btn btn-lg" %>
-	</p>
-	<% end %>
-
+<div class="row" style="text-align:left;">
+	<div class = "col-xs-12 ms" >
+		<h1 class="home-headings">Урбан - все, что Вам нужно, чтобы найти квартиру мечты</b> </h1>
+		<% if user_signed_in? %>
+			<div style="text-align:center; padding: 50px;">
+				<%= link_to "Найти квартиру", pins_path, class: "btn btn-primary btn-lg" %>
+			</div>
+			<% else %>
+		<p style= "text-align: center; padding:50px;">	
+				<%= link_to "Зарегистрироваться", new_user_registration_path, class: "btn btn-primary btn-lg" %> 
+				<%= link_to "Войти", new_user_session_path, class: "btn btn-lg" %>
+		</p>
+		<% end %>
+	</div>
+	<div class = "row home-headings" style="padding: 60px;">
+		<h1>Работайте с экспертами на каждом этапе Вашего поиска</b> </h1>
+	</div>
 </div>

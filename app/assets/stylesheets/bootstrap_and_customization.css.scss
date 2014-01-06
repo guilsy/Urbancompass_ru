@@ -1,8 +1,21 @@
+
 @import url(http://fonts.googleapis.com/css?family=Bad+Script&subset=cyrillic);
 $body-bg:						#bdc3c7;
 $navbar-default-bg:	#ecf0f1;
 $navbar-default-link-color: #c0392b;
 $brand-primary: #c0392b;
 $table-border-color: #bdc3c7;
+$padding-large-vertical: 10px;
 $font-family-sans-serif: 'Bad Script', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 @import 'bootstrap'; 
+.home-headings {
+  padding: 35px; 
+  letter-spacing: 1px; 
+  line-height: 50px;
+}
+
+.ms {
+background-image:url("moscow.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+}

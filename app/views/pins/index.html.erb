@@ -2,22 +2,24 @@
   <% @pins.each do |pin| %>
     <%= link_to pin, class: "list-group-item" do %>
       <div class = "row">
-        <div class = "col-md-3">
+        <div class = "col-xs-12 col-md-3">
           <%= image_tag pin.pics[0].image.url :thumb %>
         </div>
-        <div class = "col-md-9">
+        <div class = "col-xs-12 col-md-3">
           <h2><%= pin.address %></h2>
           <h6>Добавлено <%= pin.created_at.day %>-<%= pin.created_at.month %>-<%= pin.created_at.year%> </h6>
+        </div>  
+        <div class = "col-xs-12 col-md-6">
           <table class = "table table-bordered" width = "100%">
             <tr>
               <td>
-                <h5 align="center">Количество комнат<br></h5>
+                <h5 align="center">Количество комнат</h5>
                 <h2 align="center"><%= pin.bedroom_number %></h2>
               </td>  
               <td>
-                <h5 align="center"> Цена<br></h5>
+                <h5 align="center"> Цена</h5>
                 <h2 align="center"><%= pin.price %></h2>
-                <h5 align="center"><br>рублей в месяц</h5>
+                <h5 align="center">рублей в месяц</h5>
               </td>  
             </tr>
           </table>  
