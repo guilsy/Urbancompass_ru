@@ -18,5 +18,11 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $("a.fancybox").fancybox();
+  $("a.fancybox").fancybox({
+		'transitionIn'	:	'elastic',
+		'transitionOut'	:	'elastic',
+		'speedIn'		:	600, 
+		'speedOut'		:	200, 
+		'overlayShow'	:	false
+	});
 });
