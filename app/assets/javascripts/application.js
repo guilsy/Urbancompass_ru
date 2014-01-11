@@ -16,13 +16,3 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-
-$(document).ready(function() {
-	$(".gallery").fancybox({
-		'padding' : '0',
-		'cyclic'  : true,
-		'hideOnContentClick' : true,
-		'transitionIn' : 'none',
-		'transitionOut' : 'none'
-	});
-});
