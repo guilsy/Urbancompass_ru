@@ -40,7 +40,7 @@
     <%= fields_for @pic, html: { multipart: true } do |u| %>
     <div class = "form-group">
       <%= u.label :image, "Добавьте фотографии квартиры" %>
-      <%= u.file_field :image, class: "form-control" %>
+      <%= u.file_field :image, :class => "gallery", :rel => "group1", class: "form-control" %>
     </div>  
   <% end %>
 

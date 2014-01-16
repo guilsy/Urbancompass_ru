@@ -1,19 +1,17 @@
 <script>
-	$(document).ready(function() {
-	$(".gallery").fancybox({
-		'padding' : '0',
-		'cyclic'  : true,
-		'hideOnContentClick' : true,
-		'transitionIn' : 'none',
-		'transitionOut' : 'none'
+	$(window).ready(function() {	
+		$("a.gallery").fancybox({
+			'padding' : '0',
+			'cyclic'  : true,
+			'hideOnContentClick' : true,
+			'transitionIn' : 'none',
+			'transitionOut' : 'none'
+		});
 	});
-});
 </script>
 
 <% @pin.pics.each do |x| %>
-	<%= link_to image_tag(x.image.url(:thumb)), 
-									x.image.url(:large),
-									:class => "gallery", :rel => "group#{x.pin_id}" %>
+	<%= link_to image_tag(x.image.url(:thumb)), x.image.url(:large), :class => "gallery", :rel => "group#{x.pin_id}" %>
 
 <% end %>
 <p id="notice"><%= notice %></p>

@@ -22,7 +22,7 @@ class PinsController < ApplicationController
     @pin = current_user.pins.build(pin_params)
     @pic = @pin.pics.build(pic_params)
       if @pin.save
-        redirect_to @pin, notice: 'Пин был успешно создан.'
+        redirect_to @pin, notice: 'Квартира была успешно добавлена.'
       else
         render action: 'new'
       end
@@ -31,7 +31,7 @@ class PinsController < ApplicationController
   def update
     @pic = @pin.pics.build(pic_params)
       if @pin.update(pin_params)
-        redirect_to @pin, notice: 'Пин был успешно обновлен.'
+        redirect_to @pin, notice: 'Информация о квартире была обновлена.'
       else
         render action: 'edit' 
       end
