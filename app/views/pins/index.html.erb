@@ -2,15 +2,18 @@
   <% @pins.each do |pin| %>
     <%= link_to pin, class: "list-group-item" do %>
       <div class = "row">
-        <div class = "col-xs-12 col-md-3">
-          <%= image_tag pin.pics[0].image.url :thumb %>
+        <div class = "col-xs-12 col-sm-4">
+          <%= image_tag pin.pics[0].image.url :medium %>
         </div>
-        <div class = "col-xs-12 col-md-3">
+        <div class = "col-xs-12 col-sm-4">
           <h2><%= pin.address %></h2>
-          <h5>Ст. метро <%= pin.metro %></h5>
+          <% if pin.metro == nil %>
+          <% else %>
+            <h5><span class="glyphicon glyphicon-map-marker"></span>Ст. метро <%= pin.metro %></h5>
+          <% end %>
           <h6>Добавлено <%= pin.created_at.day %>-<%= pin.created_at.month %>-<%= pin.created_at.year%> </h6>
         </div>  
-        <div class = "col-xs-12 col-md-6">
+        <div class = "col-xs-12 col-sm-4">
           <table class = "table table-bordered" width = "100%">
             <tr>
               <td>
@@ -37,5 +40,5 @@
 <br>
 
 <% if user_signed_in? %>
-  <%= link_to 'Новый Пин', new_pin_path %>
+  <%= link_to 'Добавить квартиру', new_pin_path %>
 <% end %>
