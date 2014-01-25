@@ -14,6 +14,8 @@ gem 'devise', '~> 3.1.1'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.20.0'
 gem 'jquery-fileupload-rails'
+gem 'sunspot_rails' #gem for search functions
+gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
 
 group :development, :test do
      gem 'sqlite3'

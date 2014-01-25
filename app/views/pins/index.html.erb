@@ -1,3 +1,9 @@
+<%= form_tag pins_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag 'Найти', :name => nil, class: "btn btn-primary"%>
+  </p>
+<% end %>
 <div class = "list-group">
   <% @pins.each do |pin| %>
     <%= link_to pin, class: "list-group-item" do %>
