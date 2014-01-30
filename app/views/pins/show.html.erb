@@ -1,19 +1,8 @@
-<script>
-	$(window).ready(function() {	
-		$("a.gallery").fancybox({
-			'padding' : '0',
-			'cyclic'  : true,
-			'hideOnContentClick' : true,
-			'transitionIn' : 'none',
-			'transitionOut' : 'none'
-		});
-	});
-</script>
-
 <% @pin.pics.each do |x| %>
 	<% if x.image == nil %>
+	qwerty
 	<% else %>
-		<%= link_to image_tag(x.image.url(:medium)), x.image.url(:large), :class => "gallery img-rounded", :rel => "group#{x.pin_id}" %>
+		<%= link_to image_tag(x.image.url(:medium)), x.image.url(:large), :class => "gallery", :rel => "group#{x.pin_id}" %>
 	<%end %>
 
 <% end %>

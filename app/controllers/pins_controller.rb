@@ -5,6 +5,7 @@ class PinsController < ApplicationController
   def index
     @search = Pin.search do
       fulltext params[:search]
+     # with(:price).less_than(:priceBelow)
     end
     @pins = @search.results
   end
