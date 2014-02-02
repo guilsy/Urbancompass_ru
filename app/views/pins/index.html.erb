@@ -1,10 +1,12 @@
+<div class="container">
 <%= form_tag pins_path, :method => :get do %>
-  <div class="row" style="vertical-align:bottom">
-    <div class="col-xs-6 col-md-3 from-group">
+  <div class="row bottom" style="vertical-align:bottom">
+    <div class="col-xs-4 col-md-3 form-group">
+      <label for="Area">Район поиска</label>
       <%= text_field_tag :search, params[:search], :class =>"form-control", :placeholder => "Введите район поиска" %>
     </div>
-    <div class="col-xs-3 col-md-1">
-      Комнаты
+    <div class="col-xs-2 col-md-1">
+      <label for="Number of rooms">Комнаты</label>
       <select class="form-control">
         <option>1</option>
         <option>2</option>
@@ -20,7 +22,7 @@
       </div> 
     </div>
     <div class="col-xs-3 col-md-3">
-      <%= submit_tag 'Найти', :name => nil, class: "btn btn-primary"%>
+      <%= submit_tag 'Найти', :name => nil, class: "btn btn-primary bottom"%>
     </div>
 
   </div>
@@ -69,3 +71,4 @@
 <% if user_signed_in? %>
   <%= link_to 'Добавить квартиру', new_pin_path %>
 <% end %>
+</div>
