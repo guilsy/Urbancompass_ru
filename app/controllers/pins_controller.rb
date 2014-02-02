@@ -33,7 +33,7 @@ class PinsController < ApplicationController
   end  
 
   def update
-    @pic = @pin.pics.build(pic_params)
+      @pic = @pin.pics.build(pic_params)
       if @pin.update(pin_params)
         redirect_to @pin, notice: 'Информация о квартире была обновлена.'
       else
@@ -63,6 +63,6 @@ class PinsController < ApplicationController
     end
 
     def pic_params
-      params.require(:pic).permit(:pin_id, :image)
+      params.require(:pic).permit(:pin_id, :image, :pic)
     end
 end
