@@ -2,7 +2,7 @@
 	<% if x.image == nil %>
 	qwerty
 	<% else %>
-		<%= link_to image_tag(x.image.url(:medium)), x.image.url(:large), :class => "gallery", :rel => "group#{x.pin_id}" %>
+		<%= link_to image_tag(x.image.url(:medium)), x.image.url(:large), :class => "gallery img-responsive", :rel => "group#{x.pin_id}" %>
 	<%end %>
 
 <% end %>
