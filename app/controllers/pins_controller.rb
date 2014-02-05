@@ -6,6 +6,7 @@ class PinsController < ApplicationController
     @search = Pin.search do
       fulltext params[:search]
       with(:price).less_than(params[:price_cap]) if :price_cap.present?
+      with(:bedroom_number, params[:bedrooms]) if :bedrooms.present?
     end
     @pins = @search.results
   end
