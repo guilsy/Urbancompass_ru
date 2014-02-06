@@ -8,8 +8,8 @@ class PinsController < ApplicationController
       unless params[:price_cap].nil?
          with(:price).less_than(params[:price_cap]) 
       end
-       unless params[:bedrooms].nil?
-         with(:price).less_than(params[:bedrooms]) 
+      unless params[:bedrooms].nil?
+         with(:bedroom_number, params[:bedrooms]) 
       end
     end
     @pins = @search.results
