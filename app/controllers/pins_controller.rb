@@ -8,7 +8,7 @@ class PinsController < ApplicationController
       unless params[:price_cap].nil?
          with(:price).less_than(params[:price_cap]) 
       end
-      unless params[:bedrooms].nil?
+      if params[:bedrooms].instance_of?(Integer)
          with(:bedroom_number, params[:bedrooms]) 
       end
     end

@@ -1,13 +1,13 @@
 <div class="container">
 <%= form_tag pins_path, :method => :get do %>
-  <div class="row bottom" style="vertical-align:bottom">
+  <div class="row bottom" style="valign:bottom">
     <div class="col-xs-4 col-md-3 form-group">
       <label for="Area">Район поиска</label>
       <%= text_field_tag :search, params[:search], :class =>"form-control", :placeholder => "Введите район поиска" %>
     </div>
-    <div class="col-xs-2 col-md-1">
+    <div class="col-xs-3 col-md-1">
       <label for="Number of rooms">Комнаты</label>
-      <%= select_tag :bedrooms, options_for_select([1,2,3,4]), :class => "form-control" %>
+      <%= select_tag :bedrooms, options_for_select(["Не важно",1,2,3,4]), :class => "form-control" %>
     </div>
     <div class="col-xs-3 col-md-3">
       <div class="form-group">
@@ -15,7 +15,7 @@
         <%= text_field_tag :price_cap, params[:price_cap], :class =>"form-control", :placeholder => "Введите максимальную цену" %>
       </div> 
     </div>
-    <div class="col-xs-3 col-md-3">
+    <div class="col-xs-2 col-md-3">
       <%= submit_tag 'Найти', :name => nil, class: "btn btn-primary bottom"%>
     </div>
 
