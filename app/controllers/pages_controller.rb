@@ -6,5 +6,6 @@ class PagesController < ApplicationController
   end
 
   def map
+  	@pins = Pin.all
   end
 end

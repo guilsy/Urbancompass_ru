@@ -1,17 +1,17 @@
 <body>
-    <div id="Moscow map" style="width: 600px; height: 400px"></div>
+    <div id="MoscowMap" class="container" style="width: 800px; height: 600px"></div>
 </body>
 <script>
     ymaps.ready(init);
     var myMap;
 
     function init(){     
-        myMap = new ymaps.Map ("Moscow map", {
-            center: [55.76, 37.64],
-            zoom: 12
+        myMap = new ymaps.Map ("MoscowMap", {
+          center: [55.76, 37.64],
+          zoom: 12
         });
         myMap.controls.add(
-				   new ymaps.control.SmallZoomControl()
+			  	new ymaps.control.SmallZoomControl()
 				);
     }
 </script>
