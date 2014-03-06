@@ -8,4 +8,8 @@ class PagesController < ApplicationController
   def map
   	@pins = Pin.all
   end
+  def googlemaps
+  	@pins = Pin.all
+  end
+
 end

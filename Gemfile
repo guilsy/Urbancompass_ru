@@ -16,6 +16,7 @@ gem 'aws-sdk', '~> 1.20.0'
 gem 'jquery-fileupload-rails'
 gem 'sunspot_rails' #gem for search functions
 gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
+gem 'gmaps4rails'
 
 group :development, :test do
      gem 'sqlite3'
