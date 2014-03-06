@@ -3,20 +3,11 @@
 </div>
 <script>
 	handler = Gmaps.build('Google');
-	handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-	  markers = handler.addMarkers([
-	    {
-	      "lat": 0,
-	      "lng": 0,
-	      "picture": {
-	        "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-	        "width":  36,
-	        "height": 36
-	      },
-	      "infowindow": "hello!"
-	    }
-	  ]);
-	  handler.bounds.extendWith(markers);
-	  handler.fitMapToBounds();
-	});
+	handler.buildMap({ 
+		provider: { 
+			zoom: 8,
+    	center: new google.maps.LatLng(-34.397, 150.644)}, 
+		internal: {
+			id: 'map'}}, 
+		function(){});
 </script>
