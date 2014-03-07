@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140106193554) do
+ActiveRecord::Schema.define(version: 20140307022259) do
 
   create_table "photos", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20140106193554) do
     t.integer  "bedroom_number"
     t.integer  "price"
     t.string   "metro"
+    t.float    "longitude"
+    t.float    "latitude"
   end
 
   add_index "pins", ["address"], name: "index_pins_on_address"
