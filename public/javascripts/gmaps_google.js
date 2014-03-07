@@ -258,7 +258,7 @@
         singleInfowindow: true,
         maxRandomDistance: 0,
         clusterer: {
-          maxZoom: 5,
+          maxZoom: 14,
           gridSize: 50
         }
       });

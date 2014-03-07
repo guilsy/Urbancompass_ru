@@ -1,15 +1,111 @@
 <div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 600px;'></div>
+  <div id="custom_style" style='width: 800px; height: 600px;'></div>
 </div>
 <script>
+var mapStyle = [
+    {
+        "featureType": "water",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#acbcc9"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "stylers": [
+            {
+                "color": "#f2e5d4"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#c5c6c6"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#e4d7c6"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#fbfaf7"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#c5dac6"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "lightness": 33
+            }
+        ]
+    },
+    {
+        "featureType": "road"
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {},
+    {
+        "featureType": "road",
+        "stylers": [
+            {
+                "lightness": 20
+            }
+        ]
+    }
+];
 	handler = Gmaps.build('Google');
 	handler.buildMap({ 
 		provider: { 
 			zoom: 12,
-    	center: new google.maps.LatLng(55.745826, 37.6173)}, 
+    	center: new google.maps.LatLng(55.745826, 37.6173), 
+    	styles: mapStyle
+    },
 		internal: {
-			id: 'map'}}, 
+			id: 'custom_style'}}, 
 		function(){
-			markers = handler.addMarkers(<%=raw @hash.to_json %>);
+			var markers = handler.addMarkers(<%=raw @hash.to_json %>);
 		});
+		handler.bounds.extendWith(markers);
+  	handler.fitMapToBounds();
 </script>
