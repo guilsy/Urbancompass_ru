@@ -15,7 +15,14 @@ $font-family-sans-serif: 'Bad Script', 'Helvetica Neue', Helvetica, Arial, sans-
 }
 
 .ms {
-background-image:url("moscow.jpg");
-background-repeat:no-repeat;
-background-size:cover;
+	background-image:url("moscow.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.ms:hover {
+	background-image:url("moscow.jpg");
+	background-repeat:no-repeat;
+	background-size:cover;
+	background: rgb(54, 25, 25);
+	background: rgba(54, 25, 25, .2);
 }

@@ -1,13 +1,16 @@
 Pinteresting::Application.routes.draw do
-  resources :pins do
+  devise_for :agents
+  resources :pins do 
     resources :pics
   end  
-
   devise_for :users
- root "pages#home"
- get "about" => "pages#about" #about_path
- get "map" => "pages#map" #map_path
- get "googlemaps" => "pages#googlemaps" #googleMap_path
+  root "pages#home"
+  get "about" => "pages#about" #about_path
+  get "map" => "pages#map" #map_path
+  get "googlemaps" => "pages#googlemaps" #googleMap_path
+  resources :agents, :only => [:index, :show]
+ #get "/agents" => "agents#index" #Index for agents
+ #get "/agents/:id" => "agents#show" #Show for agents
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,12 @@
+<div class="container">
+	<% @agents.each do |agent| %>
+		<%= link_to agent, class: "list-group-item" do %>
+      <div class = "row">
+        <div class = "col-xs-12 col-sm-4">
+          <%= image_tag agent.image :medium%>
+          <%= agent.email %>
+        </div>
+      </div>  
+		<% end %>
+	<% end %>
+</div>	
